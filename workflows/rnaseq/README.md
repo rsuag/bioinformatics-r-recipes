@@ -2,6 +2,12 @@
 
 This example accepts a **gene count matrix**, not FASTQ files. It produces library-size and PCA checks, DESeq2 differential-expression results, a volcano plot, and R session details. It is a small workflow for learning and adaptation; a real study still needs a suitable experimental design, sequencing QC, annotation checks, and biological interpretation.
 
+If you only have paired FASTQ files, use [`fastq_qc.R`](fastq_qc.R) for a quick check of the first read pairs. It reports lengths, mean Phred+33 scores, and GC fractions; it does **not** align reads or create a count matrix:
+
+```bash
+Rscript workflows/rnaseq/fastq_qc.R reads.R1.fastq.gz reads.R2.fastq.gz fastq_qc_output 10000
+```
+
 ## Input
 
 `counts.csv`: first column `gene_id`; every other column is one sample of nonnegative integer gene counts. `samples.csv`: one row per sample with `sample_id` and `condition`. IDs must match exactly; sample-sheet rows may be in a different order. Use at least two biological replicates in each of exactly two groups. Technical replicates do not count as independent biological replicates.
