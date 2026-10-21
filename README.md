@@ -15,6 +15,8 @@ Rscript tests/run_tests.R
 
 For an end-to-end analysis, start with [RNA-seq: count matrix to QC and DESeq2 results](workflows/rnaseq/README.md). It includes a tiny synthetic count matrix and sample sheet, exact commands, PCA and volcano plots, and output file descriptions. It requires DESeq2; the standalone recipes below use only base R.
 
+For a real file-format example, try the [owner-approved paired seagrass FASTQ excerpts](workflows/rnaseq/real_fastq/README.md) with the [FASTQ QC command](workflows/rnaseq/fastq_qc.R). These first-read excerpts are separate from the synthetic count matrix and are not inputs for differential expression.
+
 ![Volcano plot from the synthetic RNA-seq example](workflows/rnaseq/example/volcano.png)
 
 ## Find a Recipe
