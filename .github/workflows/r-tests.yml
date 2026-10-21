@@ -14,6 +14,7 @@ jobs:
         run: |
           Rscript tests/run_tests.R
           Rscript tests/test_rnaseq_inputs.R
+          Rscript tests/test_fastq_qc.R
       - name: Install DESeq2
         run: |
           Rscript -e 'install.packages("BiocManager")'
