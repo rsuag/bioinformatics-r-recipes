@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use these original R recipes, cite this repository. Cite Mathur's book separately when using the book."
+title: "Bioinformatics R Recipes"
+type: software
+authors:
+  - family-names: Su
+    given-names: Ruilin
+url: "https://github.com/rsuag/bioinformatics-r-recipes"
