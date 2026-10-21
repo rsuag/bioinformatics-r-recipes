@@ -18,4 +18,12 @@ stopifnot(all(report$pairs_checked == 3L), all(report$median_length == 5),
 make_fastq(r2, 2, ids = 2:4)
 stopifnot(inherits(try(fastq_qc(r1, r2, file.path(root, "bad")), silent = TRUE), "try-error"))
 unlink(root, recursive = TRUE)
+
+real_dir <- "workflows/rnaseq/real_fastq"
+for (sample in c("SCS_M_0_1", "SSS_M_0_1")) {
+  r1 <- file.path(real_dir, paste0(sample, ".R1.first250.fastq.gz"))
+  r2 <- file.path(real_dir, paste0(sample, ".R2.first250.fastq.gz"))
+  checked <- fastq_qc(r1, r2, tempfile(), max_pairs = 251L)
+  stopifnot(all(checked$pairs_checked == 250L))
+}
 cat("FASTQ QC tests passed.\n")

@@ -10,6 +10,8 @@ Rscript workflows/rnaseq/fastq_qc.R reads.R1.fastq.gz reads.R2.fastq.gz fastq_qc
 
 This quick check reads only the requested first pairs. Before analysis, run `gzip -t` on **each complete `.fastq.gz` file** to detect truncation or checksum errors elsewhere in the archive.
 
+For a small real-data file-format example, see the owner-approved [seagrass FASTQ excerpts](real_fastq/README.md). These excerpts are separate from the synthetic count matrix below and cannot be used for differential expression.
+
 ## Input
 
 `counts.csv`: first column `gene_id`; every other column is one sample of nonnegative integer gene counts. `samples.csv`: one row per sample with `sample_id` and `condition`. IDs must match exactly; sample-sheet rows may be in a different order. Use at least two biological replicates in each of exactly two groups. Technical replicates do not count as independent biological replicates.
