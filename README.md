@@ -11,6 +11,12 @@ Rscript recipes/explore_counts.R
 Rscript tests/run_tests.R
 ```
 
+## Complete example
+
+For an end-to-end analysis, start with [RNA-seq: count matrix to QC and DESeq2 results](workflows/rnaseq/README.md). It includes a tiny synthetic count matrix and sample sheet, exact commands, PCA and volcano plots, and output file descriptions. It requires DESeq2; the standalone recipes below use only base R.
+
+![Volcano plot from the synthetic RNA-seq example](workflows/rnaseq/example/volcano.png)
+
 ## Find a Recipe
 
 Each link opens a standalone script. Choose a task, run its demo with `Rscript`, then `source()` it and call the named function with your own data. All 14 examples use base R and synthetic data.
