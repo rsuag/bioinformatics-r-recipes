@@ -65,7 +65,7 @@ write_qc <- function(counts, samples, out_dir) {
   plot(coordinates$PC1, coordinates$PC2, col = colors, pch = 19, cex = 1.5,
        xlab = "PC1", ylab = "PC2", main = "RNA-seq exploratory PCA (log2 CPM + 1)")
   text(coordinates$PC1, coordinates$PC2, labels = coordinates$sample_id,
-       pos = 3, cex = 0.8)
+       pos = rep(c(1, 3, 4, 2), length.out = nrow(coordinates)), cex = 0.8)
   legend("topright", legend = levels(samples$condition),
          col = c("#2369a8", "#d65f35"), pch = 19, bty = "n")
   invisible(coordinates)
