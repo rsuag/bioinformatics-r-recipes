@@ -23,22 +23,24 @@ For a real file-format example, try the [owner-approved paired seagrass FASTQ ex
 
 Each link opens a standalone script. Choose a task, run its demo with `Rscript`, then `source()` it and call the named function with your own data. All 14 examples use base R and synthetic data.
 
-| I need to... | Recipe | Input | Result |
-|---|---|---|---|
-| Check a count matrix and explore sample structure | [Explore counts](recipes/explore_counts.R) | Genes × samples, nonnegative counts | Library sizes, log-CPM, PCA |
-| Cluster molecular samples | [Cluster samples](recipes/cluster_samples.R) | Features × samples numeric matrix | Standardized distances and clustering tree |
-| Estimate a mean with uncertainty | [Bootstrap mean](recipes/bootstrap_mean.R) | Independent numeric measurements | Mean and bootstrap interval |
-| Control false discoveries across many tests | [Adjust p-values](recipes/adjust_pvalues.R) | A vector of p-values | Benjamini–Hochberg q-values |
-| Test whether selected genes are enriched in pathways | [Gene-set enrichment](recipes/gene_set_enrichment.R) | Selected genes, gene sets, measured universe | Hypergeometric p-values and q-values |
-| Estimate a proportion with uncertainty | [Beta-binomial update](recipes/beta_binomial.R) | Successes and total trials | Posterior mean and credible interval |
-| Estimate transitions between discrete states | [Markov transitions](recipes/markov_transitions.R) | State sequence | Transition counts and probabilities |
-| Evaluate a binary classifier without train/test leakage | [Logistic classifier](recipes/logistic_classifier.R) | Labeled feature table | Held-out predictions and metrics |
-| Read FASTA and calculate GC content | [FASTA GC](recipes/fasta_gc.R) | DNA FASTA | Per-sequence length and GC fraction |
-| Count short DNA words | [K-mer frequencies](recipes/kmer_frequencies.R) | DNA sequence and k | Overlapping k-mer counts |
-| Summarize diploid variants | [Variant allele frequency](recipes/variant_allele_frequency.R) | Variants × samples genotype dosages | Alternate frequency and missingness |
-| Compare normalized transcript expression | [Differential expression](recipes/differential_expression.R) | Genes × samples log2 expression, two groups | Log2 difference, Welch p-values, q-values |
-| Audit missing metabolomics measurements | [Metabolomics missingness](recipes/metabolomics_missingness.R) | Features × samples intensity matrix | Missingness report and observed-value log transform |
-| Compare metabolite intensities | [Metabolomics fold change](recipes/metabolomics_fold_change.R) | Features × samples intensity matrix, two groups | Median log2 difference and fold change |
+Each recipe also has a visible example result in the [result figure gallery](docs/recipe-gallery.md). Rebuild every PNG with `Rscript scripts/render_recipe_figures.R`.
+
+| I need to... | Recipe | Input | Result | Figure |
+|---|---|---|---|---|
+| Check a count matrix and explore sample structure | [Explore counts](recipes/explore_counts.R) | Genes × samples, nonnegative counts | Library sizes, log-CPM, PCA | [PCA](docs/figures/recipes/explore_counts.png) |
+| Cluster molecular samples | [Cluster samples](recipes/cluster_samples.R) | Features × samples numeric matrix | Standardized distances and clustering tree | [Dendrogram](docs/figures/recipes/cluster_samples.png) |
+| Estimate a mean with uncertainty | [Bootstrap mean](recipes/bootstrap_mean.R) | Independent numeric measurements | Mean and bootstrap interval | [Interval](docs/figures/recipes/bootstrap_mean.png) |
+| Control false discoveries across many tests | [Adjust p-values](recipes/adjust_pvalues.R) | A vector of p-values | Benjamini–Hochberg q-values | [p vs q](docs/figures/recipes/adjust_pvalues.png) |
+| Test whether selected genes are enriched in pathways | [Gene-set enrichment](recipes/gene_set_enrichment.R) | Selected genes, gene sets, measured universe | Hypergeometric p-values and q-values | [Enrichment](docs/figures/recipes/gene_set_enrichment.png) |
+| Estimate a proportion with uncertainty | [Beta-binomial update](recipes/beta_binomial.R) | Successes and total trials | Posterior mean and credible interval | [Posterior](docs/figures/recipes/beta_binomial.png) |
+| Estimate transitions between discrete states | [Markov transitions](recipes/markov_transitions.R) | State sequence | Transition counts and probabilities | [Heatmap](docs/figures/recipes/markov_transitions.png) |
+| Evaluate a binary classifier without train/test leakage | [Logistic classifier](recipes/logistic_classifier.R) | Labeled feature table | Held-out predictions and metrics | [Predictions](docs/figures/recipes/logistic_classifier.png) |
+| Read FASTA and calculate GC content | [FASTA GC](recipes/fasta_gc.R) | DNA FASTA | Per-sequence length and GC fraction | [GC bars](docs/figures/recipes/fasta_gc.png) |
+| Count short DNA words | [K-mer frequencies](recipes/kmer_frequencies.R) | DNA sequence and k | Overlapping k-mer counts | [K-mer bars](docs/figures/recipes/kmer_frequencies.png) |
+| Summarize diploid variants | [Variant allele frequency](recipes/variant_allele_frequency.R) | Variants × samples genotype dosages | Alternate frequency and missingness | [Variant summary](docs/figures/recipes/variant_allele_frequency.png) |
+| Compare normalized transcript expression | [Differential expression](recipes/differential_expression.R) | Genes × samples log2 expression, two groups | Log2 difference, Welch p-values, q-values | [Result plot](docs/figures/recipes/differential_expression.png) |
+| Audit missing metabolomics measurements | [Metabolomics missingness](recipes/metabolomics_missingness.R) | Features × samples intensity matrix | Missingness report and observed-value log transform | [Missingness map](docs/figures/recipes/metabolomics_missingness.png) |
+| Compare metabolite intensities | [Metabolomics fold change](recipes/metabolomics_fold_change.R) | Features × samples intensity matrix, two groups | Median log2 difference and fold change | [Fold changes](docs/figures/recipes/metabolomics_fold_change.png) |
 
 Open a recipe to see its function signature and a self-contained example. To use your own data, `source()` the script and call its function with the input shape described in its header. For example:
 
@@ -61,7 +63,7 @@ This independent repository is organized around themes in Sunil K. Mathur's [*St
 
 ## Contributing
 
-Add one focused, independently runnable recipe per task. Include a synthetic demo, input checks, the expected input shape, and a test that checks a scientific invariant. Keep the task table above current.
+Add one focused, independently runnable recipe per task. Include a synthetic demo, input checks, the expected input shape, a result figure, and a test that checks a scientific invariant. Keep the task table and result gallery current.
 
 ## License
 

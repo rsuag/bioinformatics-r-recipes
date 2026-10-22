@@ -18,4 +18,6 @@ Rscript workflows/rnaseq/fastq_qc.R \
   fastq_qc_output 250
 ```
 
+![Read-length distributions from the SCS_M_0_1 excerpt](read_lengths.png)
+
 These short, first-read excerpts are intended for file-format and QC demonstrations only. They cannot be used as gene counts or support biological comparisons or DESeq2 inference. The sample IDs are not interpreted as treatment labels here. The repository's MIT license covers original code; no separate data reuse license is specified for these excerpts.

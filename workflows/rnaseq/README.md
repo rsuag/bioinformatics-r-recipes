@@ -38,4 +38,8 @@ Rscript workflows/rnaseq/run.R \
 
 Replace the first two paths with your own files and choose a new output folder. The last two arguments identify the reference and case groups; reported log2 fold change is **case divided by reference**. The output folder contains `library_sizes.csv`, `pca_coordinates.csv`, `pca.png`, `deseq2_results.csv`, `volcano.png`, and `session_info.txt`.
 
+| Exploratory sample structure | Differential-expression result |
+|---|---|
+| ![PCA from the synthetic count matrix](example/pca.png) | ![Volcano plot from the synthetic DESeq2 result](example/volcano.png) |
+
 The PCA uses log2(CPM + 1) only for exploratory QC. For inference, DESeq2 fits a negative-binomial model to **raw integer counts**. Genes with fewer than two samples having at least 10 counts are excluded. Review sample clustering, batch structure, counts, and the design before interpreting adjusted p-values. DESeq2 may report `NA` for some p-values or adjusted p-values; these are retained in the output. See the [official DESeq2 vignette](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html) for the method and more complex designs.
